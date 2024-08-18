@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container, Typography } from "@mui/material";
+import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth={false} sx={{ maxWidth: "700px", margin: "0 auto" }}>
+      <Typography variant="h3" align="center" pt={6}>
+        Todo App
+      </Typography>
+      <Typography variant="h5" align="center" mb={4}>
+        Manage your tasks efficiently
+      </Typography>
+      <AddTodo />
+      <TodoList />
+      <ToastContainer />
+    </Container>
   );
-}
+};
 
 export default App;
